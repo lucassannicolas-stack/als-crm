@@ -598,19 +598,24 @@ async function getAccessToken(){
 }
 
 async function showApp(){
-  document.getElementById("loading-txt").textContent="Conectando con Google Calendar...";
+  document.getElementById("loading-txt").textContent="Cargando CRM...";
   initLocal();
+  // Mostrar la app inmediatamente sin esperar Calendar
+  document.getElementById("loading-screen").classList.add("hidden");
+  document.getElementById("app").style.display="flex";
+  renderDash();
+  // Intentar Calendar en segundo plano con timeout de 4 segundos
   try{
-    accessToken=await getAccessToken();
+    accessToken=await Promise.race([
+      getAccessToken(),
+      new Promise((_,rej)=>setTimeout(()=>rej(new Error('timeout')),4000))
+    ]);
     document.getElementById("user-email").textContent="lucas.sannicolas@gmail.com";
+    loadReuniones(false).catch(()=>setSB('err'));
   }catch(e){
     console.warn("Google Calendar:",e.message);
     setSB("err");
   }
-  await loadReuniones(false);
-  document.getElementById("loading-screen").classList.add("hidden");
-  document.getElementById("app").style.display="flex";
-  renderDash();
 }
 
 async function gcalFetch(url,options={}){
