@@ -259,11 +259,11 @@ tr:hover td{background:var(--bg3)}
         <button class="btn btn-reu btn-sm" onclick="openModal('reunion')"><i class="ti ti-calendar-plus"></i> Reunión</button>
         <button class="btn btn-sm" style="background:#FF3B30;border-color:#FF3B30;color:#fff;font-weight:600" onclick="openVoz()"><i class="ti ti-microphone"></i> Voz</button>
         <div style="position:relative;display:inline-block">
-          <button class="btn btn-sm" style="background:#EAF3DE;border-color:#C0DD97;color:#27500A" onclick="toggleExportMenu()"><i class="ti ti-download"></i> Excel</button>
+          <button class="btn btn-sm" style="background:#EAF3DE;border-color:#C0DD97;color:#27500A;font-weight:600" onclick="toggleExportMenu()"><i class="ti ti-download"></i> Excel</button>
           <div id="export-menu" style="display:none;position:absolute;right:0;top:110%;background:#fff;border:1px solid var(--border);border-radius:var(--radius);box-shadow:var(--shadow);z-index:200;min-width:160px">
-            <div onclick="exportarClientes();toggleExportMenu()" style="padding:9px 14px;font-size:12px;cursor:pointer;display:flex;align-items:center;gap:7px;color:var(--text)" onmouseover="this.style.background='var(--bg3)'" onmouseout="this.style.background=''"><i class="ti ti-users" style="color:#185FA5"></i> Clientes</div>
-            <div onclick="exportarVentas();toggleExportMenu()" style="padding:9px 14px;font-size:12px;cursor:pointer;display:flex;align-items:center;gap:7px;color:var(--text)" onmouseover="this.style.background='var(--bg3)'" onmouseout="this.style.background=''"><i class="ti ti-receipt-2" style="color:#BA7517"></i> Ventas</div>
-            <div onclick="exportarComisiones();toggleExportMenu()" style="padding:9px 14px;font-size:12px;cursor:pointer;display:flex;align-items:center;gap:7px;color:var(--text)" onmouseover="this.style.background='var(--bg3)'" onmouseout="this.style.background=''"><i class="ti ti-coin" style="color:#3B6D11"></i> Comisiones</div>
+            <div onclick="exportarClientes();toggleExportMenu()" style="padding:9px 14px;font-size:12px;cursor:pointer;display:flex;align-items:center;gap:7px" onmouseover="this.style.background='var(--bg3)'" onmouseout="this.style.background=''"><i class="ti ti-users" style="color:#185FA5"></i> Clientes</div>
+            <div onclick="exportarVentas();toggleExportMenu()" style="padding:9px 14px;font-size:12px;cursor:pointer;display:flex;align-items:center;gap:7px" onmouseover="this.style.background='var(--bg3)'" onmouseout="this.style.background=''"><i class="ti ti-receipt-2" style="color:#BA7517"></i> Ventas</div>
+            <div onclick="exportarComisiones();toggleExportMenu()" style="padding:9px 14px;font-size:12px;cursor:pointer;display:flex;align-items:center;gap:7px" onmouseover="this.style.background='var(--bg3)'" onmouseout="this.style.background=''"><i class="ti ti-coin" style="color:#3B6D11"></i> Comisiones</div>
           </div>
         </div>
       </div>
@@ -303,7 +303,7 @@ tr:hover td{background:var(--bg3)}
         </div>
         <div class="card"><div class="ch"><span class="ct">Historial de ventas</span></div>
           <div style="overflow-x:auto"><table>
-            <thead><tr><th style="width:8%">Fecha</th><th style="width:12%">Cliente</th><th style="width:10%">Producto</th><th style="width:6%">Cant.</th><th style="width:7%">$/u</th><th style="width:9%">Total</th><th style="width:10%">N° Factura</th><th style="width:8%">Cond. Pago</th><th style="width:5%">Com%</th><th style="width:9%">Comisión</th><th style="width:11%">Notas</th><th style="width:5%"></th><th style="width:5%"></th></tr></thead>
+            <thead><tr><th style="width:8%">Fecha</th><th style="width:12%">Cliente</th><th style="width:10%">Producto</th><th style="width:6%">Cant.</th><th style="width:7%">$/u</th><th style="width:9%">Total</th><th style="width:11%">N° Factura</th><th style="width:9%">Cond. Pago</th><th style="width:5%">Com%</th><th style="width:9%">Comisión</th><th style="width:9%">Notas</th><th style="width:5%"></th></tr></thead>
             <tbody id="tb-vnt"></tbody>
           </table></div>
         </div>
@@ -445,7 +445,7 @@ tr:hover td{background:var(--bg3)}
       </div>
       <div class="fb fv"><div class="fbt"><i class="ti ti-building-factory"></i> Datos</div>
         <div class="frow"><div class="field"><label>Cantidad *</label><div class="mfw"><input id="v-cant" type="number" min="0" step="0.1" placeholder="16" oninput="calcV()"><button class="fmic" onclick="mf('v-cant',this)"><i class="ti ti-microphone"></i></button></div></div><div class="field"><label>Precio USD s/IVA *</label><div class="mfw"><input id="v-prec" type="number" min="0" placeholder="1180" oninput="calcV()"><button class="fmic" onclick="mf('v-prec',this)"><i class="ti ti-microphone"></i></button></div></div></div>
-        <div class="frow"><div class="field"><label>Condición de pago</label><select id="v-condpago"><option value="contado">Contado</option><option value="15 días">15 días</option><option value="30 días">30 días</option><option value="45 días">45 días</option><option value="60 días">60 días</option><option value="90 días">90 días</option><option value="180 días">180 días</option><option value="360 días">360 días</option><option value="cheque">Cheque</option><option value="canje">Canje granos</option></select></div><div class="field"><label>N° Factura</label><div class="mfw"><input id="v-nrofac" placeholder="0005-00001343-A"><button class="fmic" onclick="mf('v-nrofac',this)"><i class="ti ti-microphone"></i></button></div></div></div>
+        <div class="frow"><div class="field"><label>N° Factura</label><div class="mfw"><input id="v-nrofac" placeholder="0005-00001343-A"><button class="fmic" onclick="mf('v-nrofac',this)"><i class="ti ti-microphone"></i></button></div></div><div class="field"><label>Condición de pago</label><select id="v-condpago"><option value="contado">Contado</option><option value="15 días">15 días</option><option value="30 días">30 días</option><option value="45 días">45 días</option><option value="60 días">60 días</option><option value="90 días">90 días</option><option value="180 días">180 días</option><option value="360 días">360 días</option><option value="cheque">Cheque</option><option value="canje">Canje granos</option></select></div></div>
         <div class="field"><label>Notas</label><div class="mfw"><textarea id="v-nota" rows="2" placeholder="Detalles adicionales..."></textarea><button class="fmic fmic-ta" onclick="mf('v-nota',this)"><i class="ti ti-microphone"></i></button></div></div>
       </div>
       <div class="fb fg2"><div class="fbt"><i class="ti ti-calculator"></i> Comisión y totales</div>
@@ -541,18 +541,18 @@ const SEED_C = [
   {id:1007,nombre:'Cosufi SA',empresa:'Cosufi SA',email:'',tel:'',cuit:'',localidad:'',provincia:'',zona:'',estado:'cliente',lat:'',lng:'',notas:'Pago cheques 30-60-90 días.',fechaAlta:'2026-05-12'}
 ];
 const SEED_V = [
-  {id:2001,clienteId:1001,fecha:'2026-04-01',producto:'Map Liquid',cantidad:16,precio:1180,comision:3,condpago:'30 días',nrofactura:'0005-00001343-A',notas:'Total c/IVA: U$S 20.862,40. Transferencia, 30 días, vto 1/5/26.'},
-  {id:2002,clienteId:1001,fecha:'2026-05-27',producto:'Multinano',cantidad:80,precio:30,comision:3,condpago:'contado',nrofactura:'0005-00001408-A',notas:'80 dosis/80 ha. Total c/IVA: U$S 2.652.'},
-  {id:2003,clienteId:1002,fecha:'2026-05-21',producto:'Map Liquid',cantidad:30,precio:1100,comision:1.5,condpago:'contado',nrofactura:'0005-00001398',notas:'Total c/IVA: U$S 36.465. Transferencia contado.'},
-  {id:2004,clienteId:1002,fecha:'2026-06-05',producto:'Map Liquid',cantidad:25.16,precio:1100,comision:1.5,condpago:'contado',nrofactura:'0005-00001420',notas:'Total neto: U$S 27.676. Transferencia contado.'},
-  {id:2005,clienteId:1003,fecha:'2026-04-08',producto:'Map Liquid',cantidad:45,precio:1200,comision:3,condpago:'contado',nrofactura:'0005-00001345',notas:'Total: U$S 63.648. Banco Nación, contado.'},
-  {id:2006,clienteId:1003,fecha:'2026-04-08',producto:'Map Liquid',cantidad:15,precio:1200,comision:3,condpago:'contado',nrofactura:'0005-00001344',notas:'Total: U$S 21.216. Banco Nación, contado.'},
-  {id:2007,clienteId:1004,fecha:'2025-10-24',producto:'Map Liquid',cantidad:15,precio:1200,comision:3,condpago:'cheque',nrofactura:'0001-00001203',notas:'Total: U$S 21.381,75. Cheque 210 días, vto 22/5/26.'},
-  {id:2008,clienteId:1005,fecha:'2026-04-01',producto:'Map Liquid',cantidad:12.5,precio:1200,comision:3,condpago:'cheque',nrofactura:'0005-00001342',notas:'Cheque 180 días, vto 28/9/26.'},
-  {id:2009,clienteId:1005,fecha:'2026-04-01',producto:'Map Liquid',cantidad:12.5,precio:1200,comision:3,condpago:'cheque',nrofactura:'0005-00001342',notas:'Cheque 360 días, vto 27/3/27.'},
-  {id:2010,clienteId:1006,fecha:'2026-04-27',producto:'Map Liquid',cantidad:80,precio:1200,comision:3,condpago:'canje',nrofactura:'0005-00001370',notas:'Total: U$S 107.759,60. Canje granos 360 días, vto 22/4/27.'},
-  {id:2011,clienteId:1007,fecha:'2026-05-12',producto:'Map Liquid',cantidad:60,precio:1200,comision:3,condpago:'cheque',nrofactura:'0005-00000009',notas:'Total: U$S 76.245. Cheques 30-60-90 días, vto 10/8/26.'},
-  {id:2012,clienteId:1007,fecha:'2026-05-29',producto:'Zinc',cantidad:1,precio:1672.97,comision:3,condpago:'cheque',nrofactura:'0005-00001410',notas:'Total: U$S 1.672,97. Cheque 60 días, vto 28/7/26.'}
+  {id:2001,clienteId:1001,fecha:'2026-04-01',producto:'Map Liquid',cantidad:16,precio:1180,comision:3,nrofactura:'0005-00001343-A',condpago:'30 días',notas:'Total c/IVA: U$S 20.862,40. Transferencia, 30 días, vto 1/5/26.'},
+  {id:2002,clienteId:1001,fecha:'2026-05-27',producto:'Multinano',cantidad:80,precio:30,comision:3,nrofactura:'0005-00001408-A',condpago:'contado',notas:'80 dosis/80 ha. Total c/IVA: U$S 2.652.'},
+  {id:2003,clienteId:1002,fecha:'2026-05-21',producto:'Map Liquid',cantidad:30,precio:1100,comision:1.5,nrofactura:'0005-00001398',condpago:'contado',notas:'Total c/IVA: U$S 36.465. Transferencia contado.'},
+  {id:2004,clienteId:1002,fecha:'2026-06-05',producto:'Map Liquid',cantidad:25.16,precio:1100,comision:1.5,nrofactura:'0005-00001420',condpago:'contado',notas:'Total neto: U$S 27.676. Transferencia contado.'},
+  {id:2005,clienteId:1003,fecha:'2026-04-08',producto:'Map Liquid',cantidad:45,precio:1200,comision:3,nrofactura:'0005-00001345',condpago:'contado',notas:'Total: U$S 63.648. Banco Nación, contado.'},
+  {id:2006,clienteId:1003,fecha:'2026-04-08',producto:'Map Liquid',cantidad:15,precio:1200,comision:3,nrofactura:'0005-00001344',condpago:'contado',notas:'Total: U$S 21.216. Banco Nación, contado.'},
+  {id:2007,clienteId:1004,fecha:'2025-10-24',producto:'Map Liquid',cantidad:15,precio:1200,comision:3,nrofactura:'0001-00001203',condpago:'cheque',notas:'Cheque 210 días, vto 22/5/26.'},
+  {id:2008,clienteId:1005,fecha:'2026-04-01',producto:'Map Liquid',cantidad:12.5,precio:1200,comision:3,nrofactura:'0005-00001342',condpago:'cheque',notas:'Cheque 180 días, vto 28/9/26.'},
+  {id:2009,clienteId:1005,fecha:'2026-04-01',producto:'Map Liquid',cantidad:12.5,precio:1200,comision:3,nrofactura:'0005-00001342',condpago:'cheque',notas:'Cheque 360 días, vto 27/3/27.'},
+  {id:2010,clienteId:1006,fecha:'2026-04-27',producto:'Map Liquid',cantidad:80,precio:1200,comision:3,nrofactura:'0005-00001370',condpago:'canje',notas:'Total: U$S 107.759,60. Canje granos 360 días, vto 22/4/27.'},
+  {id:2011,clienteId:1007,fecha:'2026-05-12',producto:'Map Liquid',cantidad:60,precio:1200,comision:3,nrofactura:'0005-00000009',condpago:'cheque',notas:'Total: U$S 76.245. Cheques 30-60-90 días, vto 10/8/26.'},
+  {id:2012,clienteId:1007,fecha:'2026-05-29',producto:'Zinc',cantidad:1,precio:1672.97,comision:3,nrofactura:'0005-00001410',condpago:'cheque',notas:'Total: U$S 1.672,97. Cheque 60 días, vto 28/7/26.'}
 ];;
 
 // ── LOCAL STORAGE ─────────────────────────────────────────────────────────
@@ -598,21 +598,16 @@ async function getAccessToken(){
 }
 
 async function showApp(){
-  document.getElementById("loading-txt").textContent="Cargando CRM...";
+  document.getElementById("loading-txt").textContent="Conectando con Google Calendar...";
   initLocal();
-  // Intentar conectar con Google Calendar, pero no bloquear si falla
   try{
-    accessToken=await Promise.race([
-      getAccessToken(),
-      new Promise((_,rej)=>setTimeout(()=>rej(new Error('timeout')),5000))
-    ]);
+    accessToken=await getAccessToken();
     document.getElementById("user-email").textContent="lucas.sannicolas@gmail.com";
   }catch(e){
-    console.warn("Google Calendar offline:",e.message);
+    console.warn("Google Calendar:",e.message);
     setSB("err");
   }
-  // Cargar reuniones en paralelo, sin bloquear
-  loadReuniones(false).catch(()=>{});
+  await loadReuniones(false);
   document.getElementById("loading-screen").classList.add("hidden");
   document.getElementById("app").style.display="flex";
   renderDash();
@@ -866,13 +861,13 @@ function calcV(){const c=parseFloat(document.getElementById('v-cant').value)||0;
 // ── CRUD ──────────────────────────────────────────────────────────────────
 function saveCli(){
   const id=document.getElementById('e-cli-id').value;
-  const obj={nombre:document.getElementById('c-nom').value.trim(),empresa:document.getElementById('c-emp').value,email:document.getElementById('c-mail').value,tel:document.getElementById('c-tel').value,cuit:document.getElementById('c-cuit').value,localidad:document.getElementById('c-localidad').value,provincia:document.getElementById('c-provincia').value,zona:document.getElementById('c-zona').value,estado:document.getElementById('c-est').value,lat:document.getElementById('c-lat').value,lng:document.getElementById('c-lng').value,notas:document.getElementById('c-nota').value};
+  const obj={nombre:document.getElementById('c-nom').value.trim(),empresa:document.getElementById('c-emp').value,email:document.getElementById('c-mail').value,tel:document.getElementById('c-tel').value,cuit:document.getElementById('c-cuit')?.value||'',localidad:document.getElementById('c-localidad')?.value||'',provincia:document.getElementById('c-provincia')?.value||'',zona:document.getElementById('c-zona').value,estado:document.getElementById('c-est').value,lat:document.getElementById('c-lat')?.value||'',lng:document.getElementById('c-lng')?.value||'',notas:document.getElementById('c-nota').value};
   if(!obj.nombre){alert('El nombre es requerido.');return;}
   if(id){const i=clientes.findIndex(c=>c.id===parseInt(id));if(i>=0)clientes[i]={...clientes[i],...obj};}
   else{obj.id=Date.now();obj.fechaAlta=hoy();clientes.push(obj);}
   saveLocal();closeAll();renderCli();renderDash();toast('Cliente guardado ✓');
 }
-function editCli(id){const c=clientes.find(x=>x.id===id);if(!c)return;openModal('cliente');document.getElementById('t-cli').textContent='Editar';document.getElementById('e-cli-id').value=c.id;document.getElementById('c-nom').value=c.nombre||'';document.getElementById('c-emp').value=c.empresa||'';document.getElementById('c-mail').value=c.email||'';document.getElementById('c-tel').value=c.tel||'';document.getElementById('c-cuit').value=c.cuit||'';document.getElementById('c-localidad').value=c.localidad||'';document.getElementById('c-provincia').value=c.provincia||'';document.getElementById('c-zona').value=c.zona||'';document.getElementById('c-est').value=c.estado||'prospecto';document.getElementById('c-lat').value=c.lat||'';document.getElementById('c-lng').value=c.lng||'';document.getElementById('c-nota').value=c.notas||'';}
+function editCli(id){const c=clientes.find(x=>x.id===id);if(!c)return;openModal('cliente');document.getElementById('t-cli').textContent='Editar';document.getElementById('e-cli-id').value=c.id;document.getElementById('c-nom').value=c.nombre||'';document.getElementById('c-emp').value=c.empresa||'';document.getElementById('c-mail').value=c.email||'';document.getElementById('c-tel').value=c.tel||'';if(document.getElementById('c-cuit'))document.getElementById('c-cuit').value=c.cuit||'';if(document.getElementById('c-localidad'))document.getElementById('c-localidad').value=c.localidad||'';if(document.getElementById('c-provincia'))document.getElementById('c-provincia').value=c.provincia||'';document.getElementById('c-zona').value=c.zona||'';document.getElementById('c-est').value=c.estado||'prospecto';if(document.getElementById('c-lat'))document.getElementById('c-lat').value=c.lat||'';if(document.getElementById('c-lng'))document.getElementById('c-lng').value=c.lng||'';document.getElementById('c-nota').value=c.notas||'';}
 function delCli(id){if(!confirm('¿Eliminar cliente?'))return;clientes=clientes.filter(c=>c.id!==id);saveLocal();renderCli();renderDash();}
 function verDet(id){
   const c=clientes.find(x=>x.id===id);if(!c)return;
@@ -889,9 +884,9 @@ function saveVnt(){
   const cId=parseInt(document.getElementById('v-cli').value);const cant=parseFloat(document.getElementById('v-cant').value);const precio=parseFloat(document.getElementById('v-prec').value);
   if(!cId||!cant||!precio){alert('Completá los campos requeridos.');return;}
   const cpct=parseFloat(document.getElementById('v-compct')?.value)||3;
-  const condpago=document.getElementById('v-condpago')?.value||'contado';
   const nrofactura=document.getElementById('v-nrofac')?.value||'';
-  ventas.push({id:Date.now(),clienteId:cId,fecha:document.getElementById('v-fec').value,producto:document.getElementById('v-prod').value||'Map Liquid',cantidad:cant,precio,comision:cpct,condpago,nrofactura,notas:document.getElementById('v-nota').value});
+  const condpago=document.getElementById('v-condpago')?.value||'contado';
+  ventas.push({id:Date.now(),clienteId:cId,fecha:document.getElementById('v-fec').value,producto:document.getElementById('v-prod').value||'Map Liquid',cantidad:cant,precio,comision:cpct,nrofactura,condpago,notas:document.getElementById('v-nota').value});
   saveLocal();closeAll();renderVnt();renderDash();toast('Venta registrada ✓');
 }
 function delVnt(id){if(!confirm('¿Eliminar venta?'))return;ventas=ventas.filter(v=>v.id!==id);saveLocal();renderVnt();renderDash();}
@@ -1170,26 +1165,12 @@ function guardarDesdePDF(){
   toast('Factura importada y guardada ✓');
 }
 
-function toggleExportMenu(){const m=document.getElementById('export-menu');m.style.display=m.style.display==='none'?'block':'none';if(m.style.display==='block'){setTimeout(()=>document.addEventListener('click',function h(e){if(!e.target.closest('#export-menu')&&!e.target.closest('[onclick*="toggleExportMenu"]')){m.style.display='none';document.removeEventListener('click',h);}},true),10);}}
-
-// ── EXPORTAR EXCEL ────────────────────────────────────────────────────────
-function dlXlsx(rows, name) {
-  const ws = XLSX.utils.json_to_sheet(rows);
-  ws['!cols'] = Object.keys(rows[0]||{}).map(k => ({wch: Math.max(k.length + 2, 14)}));
-  const wb = XLSX.utils.book_new();
-  XLSX.utils.book_append_sheet(wb, ws, 'Datos');
-  XLSX.writeFile(wb, `${name}_${hoy()}.xlsx`);
-  toast('Excel exportado ✓');
-}
-function exportarClientes() {
-  dlXlsx(clientes.map(c => ({'Nombre': c.nombre, 'Empresa': c.empresa||'', 'CUIT': c.cuit||'', 'Localidad': c.localidad||'', 'Provincia': c.provincia||'', 'Zona/Dir': c.zona||'', 'Teléfono': c.tel||'', 'Email': c.email||'', 'Estado': c.estado||'', 'Latitud': c.lat||'', 'Longitud': c.lng||'', 'Notas': c.notas||'', 'Fecha Alta': c.fechaAlta||''})), 'Clientes_ALS');
-}
-function exportarVentas() {
-  dlXlsx(ventas.map(v => {const c=clientes.find(x=>x.id===v.clienteId);const tot=v.cantidad*v.precio;const com=tot*(v.comision||3)/100;return{'Fecha': v.fecha, 'Cliente': c?.nombre||'', 'CUIT': c?.cuit||'', 'Producto': v.producto||'', 'Cantidad': v.cantidad, 'Precio USD': v.precio, 'Total Neto USD': tot, 'N° Factura': v.nrofactura||'', 'Cond. Pago': v.condpago||'', 'Comisión %': v.comision||3, 'Comisión USD': com, 'Notas': v.notas||''};}), 'Ventas_ALS');
-}
-function exportarComisiones() {
-  dlXlsx(ventas.map(v => {const c=clientes.find(x=>x.id===v.clienteId);const tot=v.cantidad*v.precio;const com=tot*(v.comision||3)/100;return{'Fecha': v.fecha, 'Cliente': c?.nombre||'', 'CUIT': c?.cuit||'', 'Producto': v.producto||'', 'Total Neto USD': tot, 'N° Factura': v.nrofactura||'', 'Cond. Pago': v.condpago||'', 'Comisión %': v.comision||3, 'Comisión USD': com, 'Notas': v.notas||''};}), 'Comisiones_ALS');
-}
+// ── EXCEL ─────────────────────────────────────────────────────────────────
+function toggleExportMenu(){const m=document.getElementById('export-menu');m.style.display=m.style.display==='none'?'block':'none';if(m.style.display==='block'){setTimeout(()=>document.addEventListener('click',function h(e){if(!e.target.closest('#export-menu')&&!e.target.closest('[onclick*="toggleExportMenu"]')){m.style.display='none';document.removeEventListener('click',h);}},true),50);}}
+function dlXlsx(rows,name){if(!rows.length){toast('Sin datos para exportar','e');return;}const ws=XLSX.utils.json_to_sheet(rows);ws['!cols']=Object.keys(rows[0]).map(k=>({wch:Math.max(k.length+2,14)}));const wb=XLSX.utils.book_new();XLSX.utils.book_append_sheet(wb,ws,'Datos');XLSX.writeFile(wb,`${name}_${hoy()}.xlsx`);toast('Excel exportado ✓');}
+function exportarClientes(){dlXlsx(clientes.map(c=>({'Nombre':c.nombre,'Empresa':c.empresa||'','CUIT':c.cuit||'','Localidad':c.localidad||'','Provincia':c.provincia||'','Zona/Dir':c.zona||'','Teléfono':c.tel||'','Email':c.email||'','Estado':c.estado||'','Latitud':c.lat||'','Longitud':c.lng||'','Notas':c.notas||'','Fecha Alta':c.fechaAlta||''})),'Clientes_ALS');}
+function exportarVentas(){dlXlsx(ventas.map(v=>{const c=clientes.find(x=>x.id===v.clienteId);const tot=v.cantidad*v.precio;const com=tot*(v.comision||3)/100;return{'Fecha':v.fecha,'Cliente':c?.nombre||'','CUIT':c?.cuit||'','Producto':v.producto||'','Cantidad':v.cantidad,'Precio USD':v.precio,'Total Neto USD':tot,'N° Factura':v.nrofactura||'','Cond. Pago':v.condpago||'','Comisión %':v.comision||3,'Comisión USD':com,'Notas':v.notas||''}}),'Ventas_ALS');}
+function exportarComisiones(){dlXlsx(ventas.map(v=>{const c=clientes.find(x=>x.id===v.clienteId);const tot=v.cantidad*v.precio;const com=tot*(v.comision||3)/100;return{'Fecha':v.fecha,'Cliente':c?.nombre||'','CUIT':c?.cuit||'','Producto':v.producto||'','Total Neto USD':tot,'N° Factura':v.nrofactura||'','Cond. Pago':v.condpago||'','Comisión %':v.comision||3,'Comisión USD':com,'Notas':v.notas||''}}),'Comisiones_ALS');}
 
 // ── INIT ──────────────────────────────────────────────────────────────────
 async function init(){
